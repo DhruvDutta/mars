@@ -1,0 +1,101 @@
+body{
+    background-color: #ddd;
+}
+body::-webkit-scrollbar{
+    width: .5em;
+    transition: width 1s ease;
+
+}
+body::-webkit-scrollbar:hover{
+    width: .7em;
+}
+body::-webkit-scrollbar-track{
+    background: #e3f6f5;
+}
+body::-webkit-scrollbar-thumb{
+    background: #272343;
+    border-radius: .5em;
+}
+.post{
+    background-color: #fff;
+    box-shadow: 1px 1px 2px #555;
+}
+.imgbox{
+    position: relative;
+}
+.like{
+    position: absolute;
+    bottom: 0em;
+    left: 0em;
+    height: 2em;
+    width: 2em;
+    color: #ddd;
+    background: rgba(0,0,0,0);
+    backdrop-filter: blur(1px);
+}
+.like i{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-shadow: 1px 1px 2px #111;
+    transform: translate(-50%,-50%);
+    transition: 0.2s;
+}
+.like i:hover{
+    font-size: 1.3em;
+}
+.apod{
+    box-shadow: 1px 1px 2px #666;
+
+}
+.apod-img-box{
+    position: relative;
+    cursor: pointer;
+}
+.apod-img-box:hover .para{
+    opacity: 1;
+    transition: .7s;
+}
+.para{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e3f6f5;
+    font-family: monospace;
+    line-height: 1.2;
+    background: rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 2px #111;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    overflow-y: scroll;
+
+}
+.para::-webkit-scrollbar{
+    width: .2em;
+    transition: width 1s ease;
+
+}
+.para::-webkit-scrollbar:hover{
+    width: .5em;
+}
+.para::-webkit-scrollbar-track{
+    background: transparent;
+}
+.para::-webkit-scrollbar-thumb{
+    background: #ddd;
+    border-radius: .5em;
+}
+.dhruv{
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.2);
+}
+a{
+    text-decoration: none;
+}

@@ -99,3 +99,6 @@ body::-webkit-scrollbar-thumb{
 a{
     text-decoration: none;
 }
+.quote{
+    font-family: cursive;
+}

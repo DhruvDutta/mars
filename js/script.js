@@ -5,7 +5,6 @@ function load_page(data,type){
         let likes = localStorage.getItem('likes')
         if(likes!=null){
             likes = likes.split(',')
-
         }
         for(var i in data.photos){
             let camera_name = data.photos[i].camera.full_name
@@ -23,7 +22,7 @@ function load_page(data,type){
             img.setAttribute('class','img-fluid rounded')
             img.src=image_src
             let heading=document.createElement('h4')
-            heading.innerText=rover +post_id
+            heading.innerText=rover
             
             let heading2=document.createElement('h5')
             heading2.innerText=camera_name
@@ -34,8 +33,11 @@ function load_page(data,type){
             like.setAttribute('class','fs-2 like rounded')
             like.setAttribute('id',post_id)
             like.innerHTML='<i class="bi bi-heart"></i>'
-            if(likes.includes(`${post_id}`)){
-                like.innerHTML='<i class="bi bi-heart-fill"></i>'
+            
+            if(likes!=null){
+                if(likes.includes(`${post_id}`)){
+                    like.innerHTML='<i class="bi bi-heart-fill"></i>'
+                }
             }
             like.addEventListener('click',event=>{
                 if(like.innerHTML=='<i class="bi bi-heart"></i>'){

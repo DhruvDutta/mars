@@ -89,6 +89,7 @@ function load_page(data,type){
         img.src = url
         let title_ = document.createElement('h5')
         title_.innerHTML = title
+        title_.setAttribute('class','text-center')
         let explanation = document.createElement('p')
         explanation.setAttribute('class','text-center para p-2 rounded')
         explanation.innerText = para

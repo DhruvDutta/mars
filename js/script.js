@@ -93,17 +93,25 @@ function load_page(data,type){
         imgbox.setAttribute('class','apod-img-box d-flex justify-content-center align-items-center flex-column col-12 col-sm-10 col-lg-8 m-2')
         let img = document.createElement('img')
         img.setAttribute('class','img-fluid rounded')
-        img.src = hdurl
+        img.src = url
         let title_ = document.createElement('h5')
         title_.innerHTML = title
         title_.setAttribute('class','text-center')
         let explanation = document.createElement('p')
         explanation.setAttribute('class','text-center para p-2 rounded')
         explanation.innerText = para
+        let loading = document.createElement('div')
+        loading.setAttribute('class','loading rounded')
+        loading.innerText = 'Loading'
+        loading.innerHTML = '<span></span><span></span>'
+        img.onload = ()=>{
+            loading.classList.add('d-none')
+        }
         imgbox.appendChild(img)
-        astro_box.appendChild(title_)
         imgbox.appendChild(explanation)
+        imgbox.appendChild(loading)
         astro_box.appendChild(imgbox)
+        astro_box.appendChild(title_)
         document.getElementById('astro_img_of_the_day').appendChild(astro_box)
 
     }

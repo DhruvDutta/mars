@@ -102,3 +102,44 @@ a{
 .quote{
     font-family: cursive;
 }
+.loading{
+    background: #222;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    font-size: 1.2em;
+}
+.loading span{
+    position: absolute;
+    height: 2em;
+    width: 2em;
+    top: 50%;
+    left:50%;
+    transform-origin: top left;
+}
+.loading span:first-child{
+    background-color: #eee;
+    animation: rotate 4s linear infinite;
+}
+
+.loading span:last-child{
+    background-color: #eee;
+    animation: rotate 4s linear infinite reverse;
+}
+@keyframes rotate{
+    from{
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg) translate(-50%,-50%);
+    }
+    to{
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg)  translate(-50%,-50%);
+    }
+}

@@ -33,7 +33,13 @@ function load_page(data,type){
             like.setAttribute('class','fs-2 like rounded')
             like.setAttribute('id',post_id)
             like.innerHTML='<i class="bi bi-heart"></i>'
-            
+            let loading = document.createElement('div')
+            loading.setAttribute('class','loading rounded')
+            loading.innerText = 'Loading'
+            loading.innerHTML = '<span></span><span></span>'
+            img.onload = ()=>{
+                loading.classList.add('d-none')
+            }
             if(likes!=null){
                 if(likes.includes(`${post_id}`)){
                     like.innerHTML='<i class="bi bi-heart-fill"></i>'
@@ -67,6 +73,7 @@ function load_page(data,type){
             post.appendChild(date_)
             imgbox.appendChild(img)
             imgbox.appendChild(like)
+            imgbox.appendChild(loading)
             post.appendChild(imgbox)
             postbox.appendChild(post)
             document.getElementById('main').appendChild(postbox)
@@ -86,7 +93,7 @@ function load_page(data,type){
         imgbox.setAttribute('class','apod-img-box d-flex justify-content-center align-items-center flex-column col-12 col-sm-10 col-lg-8 m-2')
         let img = document.createElement('img')
         img.setAttribute('class','img-fluid rounded')
-        img.src = url
+        img.src = hdurl
         let title_ = document.createElement('h5')
         title_.innerHTML = title
         title_.setAttribute('class','text-center')
@@ -132,3 +139,9 @@ fetch(`https://api.nasa.gov/planetary/apod?date=${today}&api_key=lWfMNh9HcA4hcZn
         .then(response => response.json())
         .then(data => load_page(data,'astro'))
         .catch(err => console.error(err));
+
+window.onload =()=>{
+    document.getElementsByClassName('loading')[0].classList.add('d-none')
+}
+
+console.log()
